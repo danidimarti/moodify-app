@@ -1,0 +1,18 @@
+# Environmental variables
+.env
+*/.env
+config.cfg
+
+
+# Temporary files
+**/*.ipynb_checkpoints/
+**/__pycache__
+.vscode
+.cache
+
+# Models
+Model/data/*
+
+# CSVs
+**/*.csv
+

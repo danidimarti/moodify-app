@@ -1,0 +1,15 @@
+keras==2.11.0
+matplotlib==3.7.1
+numpy==1.21.5
+cv2 @ opencv_python==4.7.0.72; 
+opencv_python==4.7.0.72
+pandas==1.5.3
+Pillow==9.4.0
+plotly==5.13.1
+python-dotenv==1.0.0
+requests==2.28.2
+spotipy==2.22.1
+streamlit==1.12.0
+tensorflow==2.11.0
+tensorflow_intel==2.11.0
+plotly==5.13.1
