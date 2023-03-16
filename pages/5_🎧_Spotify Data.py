@@ -108,26 +108,32 @@ definitonspotify = '<b>Valence:</b><br> Describes the musical positiveness conve
 st.markdown(f'<div class="text-container"><style>{container_style}</style><div style="color:#FFDAB9; font-family: serif; font-size:1.5rem">For curiosity, this is how Spotify define these two variables inside the API documentation:</div>{definitonspotify}</div><br><br>', unsafe_allow_html=True)
 
 
-elbow = "<div style='font-size:1.2rem;'>I used the K model and the elbow method to identify the number of clusters. We then looked at the mean values of the features in each cluster to understand the characteristics of the songs in each cluster.</div>"
+##### ------ ELBOW GRAPH AND SUMMARY ----- ##### 
+elbow = "<div style='font-size:1.2rem;'>I used the K model and the elbow method to identify the number of clusters. We then looked at the mean values of the features in each cluster to understand the characteristics of the songs in each cluster. <br> I choose the K-means because it is a popular clustering algorithm because it's simple, fast, and relatively easy to understand. </div>"
 
 
 st.markdown(f'<div class="container_style"><style>{container_style}</style>{elbow}</div><br>', unsafe_allow_html=True)
 
 st.image('imgs/elbow_method.png', caption='Elbow Method for clustering definition', use_column_width=True)
 
+
 elbowsummary = 'I noticed that around cluster 4 the lines changes deaccelerates dramatically. Luckily this is also the number of emotions I have mapped on the facial recognition model so I decided to keep this number.'
 
 st.markdown(f'<div class="text-container"><style>{container_style}</style><div style="color:#FFDAB9; font-family: serif; font-size:1.5rem">Elbow Method Summary:</div>{elbowsummary}</div><br><br>', unsafe_allow_html=True)
 
 
-clustermeans = "<div style='font-size:1.2rem;'>Based on the Spotify definitions, we mapped each cluster to an emotion. For example, a cluster with high mean values for danceability, valence, and energy was mapped to 'happy' songs.</div>"
-
-
-st.markdown(f'<div class="container_style"><style>{container_style}</style>{clustermeans}</div><br>', unsafe_allow_html=True)
-
+###### ------ VALENCE AND AROUSAL PLANE ------ #####
 
 st.image('imgs/The Valence-Arousal Plane and the Locations of Several Emotions-Moods on it (adapted from Russel, 1980).png', caption='Quadrant Plot Energy vs Valence', use_column_width=True)
 
+plane = "<div style='font-size:1.2rem;'>The Valence-Arousal Plane is a commonly used way to describe and understand emotions using two dimensions: valence and arousal. <br> Just like shown in the Spotify definitions the valence refers to how positive or negative an emotion is and arousal refers to how energized someone feels (anxious vs calm). <br>I have used this plane to plot and understand different emotions.  <br> <br></div>"
+
+
+st.markdown(f'<div class="container_style"><style>{container_style}</style>{plane}</div><br>', unsafe_allow_html=True)
+
+
+
+###### ----- EMOTIONS CLUSTERS ----- ##### 
 
 
 image = Image.open('imgs/valence_energy.png')
@@ -140,11 +146,18 @@ resized_image = image.resize(new_size)
 st.image(resized_image, caption='Valence and energy per cluster')
 
 
+clustermeans = "<div style='font-size:1.2rem;'>Based on the Spotify definitions and the Valance-arousal plane, I mapped each cluster to an emotion. For example, a cluster with high mean values for danceability, valence, and energy was mapped to 'happy' songs.</div>"
+
+
+st.markdown(f'<div class="container_style"><style>{container_style}</style>{clustermeans}</div><br>', unsafe_allow_html=True)
+
+
 clusters = '<b>Cluster 0 - Angry:</b><br>Valence: 0.655 (high)<br>Energy: 0.325 (neutral)<br>Explanation: Cluster 1 has neutral energy and neutral mean valence, indicating that the songs in this cluster could be classified as Neutral.<br><br><b>Cluster 1 - Neutral:</b><br>Valence: 0.383 (neutral)<br>Energy: 0.741 (high)<br>Explanation: Cluster 0 has a high energy level and neutral valence, which suggests that the songs in this cluster could be classified as angry.<br><br><b>Cluster 2 - Sad:</b><br>Valence: 0.233 (low)<br>Energy: 0.213 (low)<br>Explanation: Cluster 2 has the lowest values for valence and energy which suggests that the songs in this cluster could be classified as sad.<br><br><b>Cluster 3 - Happy: </b> <br>Valence: 0.807 (high)<br>Energy: 0.714 (high)<br>Explanation: Cluster 3 has high values for valence and energy indicating that the songs in this cluster could be classified as happy.<br><br>'
 
 st.markdown(f'<div class="text-container"><style>{container_style}</style><div style="color:#FFDAB9; font-family: serif; font-size:1.5rem">Clusters</div>{clusters}</div><br><br>', unsafe_allow_html=True)
 
 
+##### ----- Sample Song Plot ----- #####
 plotsong = "<div style='font-size:1.2rem;'>I plotted a sample song from each cluster on the valence-energy plane to see how it fits into each quadrant. I  used the following colors to represent each emotion: green for happy, cyan for neutral, red for angry, and blue for sad. The frequency of each cluster was also plotted in a bar chart.</div>"
 
 
@@ -152,7 +165,13 @@ st.markdown(f'<div class="container_style"><style>{container_style}</style>{plot
 
 st.image('imgs/emotion-quadrant_plot.png', caption='Sample song per label', use_column_width=True)
 
-st.markdown(f'<div class="container_style"><style>{container_style}</style>Finally let\'s do a lable count of the new labels for better visualization:</div><br>', unsafe_allow_html=True)
+
+##### ----- Label count bar plot for the machine leanring model ---- #####
+
+labelcount = "<div style='font-size:1.2rem;'>Finally let\'s do a lable count of the new labels for better visualization:</div>"
+
+
+st.markdown(f'<div class="container_style"><style>{container_style}</style>{labelcount}</div><br>', unsafe_allow_html=True)
 
 
 st.image('imgs/Spotify_label-count.png', caption='machine learning label counter plot', use_column_width=True)
