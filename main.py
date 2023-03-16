@@ -1,19 +1,12 @@
 
-import cv2
-import streamlit as st
-import spotipy
-from spotipy.oauth2 import SpotifyOAuth
-import numpy as np
-from tensorflow import keras
-from keras.layers import Dense
-from keras.models import Sequential, load_model
 import pandas as pd
 import time
 import os
-import statistics
+import streamlit as st
 import webbrowser
-import detector as dt
-import getsong as gs
+
+import src.detector as dt
+import src.getsong as gs
 
 CLIENT_ID = os.environ.get('CLIENT_ID')
 CLIENT_SECRET = os.environ.get('CLIENT_SECRET')

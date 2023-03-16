@@ -1,23 +1,11 @@
-import cv2
-import streamlit as st
-import spotipy
-from spotipy.oauth2 import SpotifyOAuth
+import pandas as pd
 import numpy as np
-from tensorflow import keras
-from keras.layers import Dense
-from keras.models import Sequential, load_model
-import pandas as pd
-import time
 import os
-import statistics
-import webbrowser
-from dotenv import load_dotenv
+import streamlit as st
 import requests
-import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
-
 load_dotenv()
 
 def save_token():

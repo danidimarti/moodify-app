@@ -1,16 +1,10 @@
-import cv2
-import streamlit as st
-import spotipy
-from spotipy.oauth2 import SpotifyOAuth
-import numpy as np
-from tensorflow import keras
-from keras.layers import Dense
-from keras.models import Sequential, load_model
 import pandas as pd
-import time
-import os
+import numpy as np
 import statistics
-import webbrowser
+import streamlit as st
+import cv2
+from keras.models import load_model
+
 
 #cache model to temporarily save the model in cache and decrease loading time. 
 

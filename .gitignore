@@ -2,13 +2,14 @@
 .env
 */.env
 config.cfg
+.cache
+
 
 
 # Temporary files
 **/*.ipynb_checkpoints/
 **/__pycache__
 .vscode
-.cache
 
 # Models
 Model/data/*
