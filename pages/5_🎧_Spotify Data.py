@@ -100,7 +100,7 @@ scalling = "<div style='font-size:1.2rem;'>To improve the scalability of our Spo
 
 st.markdown(f'<div class="container_style"><style>{container_style}</style>{scalling}</div><br>', unsafe_allow_html=True)
 
-st.image('imgs/Spotify_sample.png', caption='Spotify song feature sample', use_column_width=True)
+st.image('imgs/df_song-features.png', caption='Spotify song feature sample', use_column_width=True)
 
 
 definitonspotify = '<b>Valence:</b><br> Describes the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). <br> <br> <b> Energy: </b> </br> Numerical, Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.'
@@ -152,7 +152,7 @@ clustermeans = "<div style='font-size:1.2rem;'>Based on the Spotify definitions 
 st.markdown(f'<div class="container_style"><style>{container_style}</style>{clustermeans}</div><br>', unsafe_allow_html=True)
 
 
-clusters = '<b>Cluster 0 - Angry:</b><br>Valence: 0.655 (high)<br>Energy: 0.325 (neutral)<br>Explanation: Cluster 1 has neutral energy and neutral mean valence, indicating that the songs in this cluster could be classified as Neutral.<br><br><b>Cluster 1 - Neutral:</b><br>Valence: 0.383 (neutral)<br>Energy: 0.741 (high)<br>Explanation: Cluster 0 has a high energy level and neutral valence, which suggests that the songs in this cluster could be classified as angry.<br><br><b>Cluster 2 - Sad:</b><br>Valence: 0.233 (low)<br>Energy: 0.213 (low)<br>Explanation: Cluster 2 has the lowest values for valence and energy which suggests that the songs in this cluster could be classified as sad.<br><br><b>Cluster 3 - Happy: </b> <br>Valence: 0.807 (high)<br>Energy: 0.714 (high)<br>Explanation: Cluster 3 has high values for valence and energy indicating that the songs in this cluster could be classified as happy.<br><br>'
+clusters = '<b>Cluster 0 - Neutral:</b><br>Valence: 0.655 (high)<br>Energy: 0.325 (neutral)<br>Explanation: Cluster 1 has neutral energy and neutral mean valence, indicating that the songs in this cluster could be classified as Neutral.<br><br><b>Cluster 1 - Angry:</b><br>Valence: 0.383 (neutral)<br>Energy: 0.741 (high)<br>Explanation: Cluster 0 has a high energy level and neutral valence, which suggests that the songs in this cluster could be classified as angry.<br><br><b>Cluster 2 - Sad:</b><br>Valence: 0.233 (low)<br>Energy: 0.213 (low)<br>Explanation: Cluster 2 has the lowest values for valence and energy which suggests that the songs in this cluster could be classified as sad.<br><br><b>Cluster 3 - Happy: </b> <br>Valence: 0.807 (high)<br>Energy: 0.714 (high)<br>Explanation: Cluster 3 has high values for valence and energy indicating that the songs in this cluster could be classified as happy.<br><br>'
 
 st.markdown(f'<div class="text-container"><style>{container_style}</style><div style="color:#FFDAB9; font-family: serif; font-size:1.5rem">Clusters</div>{clusters}</div><br><br>', unsafe_allow_html=True)
 

@@ -50,7 +50,7 @@ if st.button('Moodify me', key="center_button"):
     countdown_text.empty()
     
     # Open the link
-    webbrowser.open_new_tab(link_2)
+    webbrowser.open_new_tab(link)
  
     
     # Add the footer text at the bottom of the page
